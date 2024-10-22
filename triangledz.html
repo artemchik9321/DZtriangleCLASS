@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>тругольник</title>
+</head>
+<body>
+    <script>
+        class Triangle 
+    {
+        constructor(a, b, c)
+        {
+            this.a = a;
+            this.b = b;
+            this.c = c;
+        }
+        Input() 
+        {
+            this.a = parseFloat(prompt("1 side triangle "));
+            this.b = parseFloat(prompt("2 side triangle "));
+            this.c = parseFloat(prompt("3 side triangle "));
+        }
+        Print()
+        {
+            console.log("a " + this.a + ", b " + this.b + ", c " + this.c);
+        }
+        getArea()
+        {
+            let z = this.getPerimeter() / 2;
+            return Math.sqrt(z * (z - this.a) * (z - this.b) * (z - this.c));
+        }
+        getPerimeter()
+        {
+            return this.a + this.b + this.c;
+        }
+
+        results()
+        {
+            let perimeter = this.getPerimeter();
+            let area = this.getArea();
+
+            if (area !== null) 
+            {
+                console.log("perimeter " + perimeter);
+                console.log("area " + area);
+            }
+        }
+    }
+    let x = new Triangle(4, 6, 8);
+    x.Print();
+    x.Input();
+    x.Print();
+    x.results();
+    </script>
+</body>
+</html>
